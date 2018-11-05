@@ -15,6 +15,7 @@ public class RutaNacional {
     private String aeroportOri;
     private String aeroportDes;
     private double distancia;
+    private String pais;
     
     /*
      CONSTRUCTOR
@@ -61,5 +62,6 @@ public class RutaNacional {
         System.out.println("\nAeroport d'origen: " + aeroportOri);
         System.out.println("\nAeroport de destí: " + aeroportDes);
         System.out.println("\nDistància: " + distancia);
+        System.out.println("\nPaís: " + pais);
     }
 }

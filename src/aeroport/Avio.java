@@ -17,16 +17,25 @@ public class Avio {
     private String model;
     private int capacitat;
     private Classe[] classes;
-    private int posicioClasses; //Atribut que controla la primera posició vuida del vector
+    private int posicioClasses; //Atribut que controla la primera posició buida del vector
 
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys classes i posicioClasses.
      Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-     - Inicialitzar el vector classes com a buit i una longitud de 4.
-     - Inicialitzar l'atribut possicioClasses a 0.
+     - DONE! Assignar als atributs els valors passats com a paràmetres.
+     - DONE! Inicialitzar el vector classes com a buit i una longitud de 4.
+     - DONE! Inicialitzar l'atribut possicioClasses a 0.
      */
+    public Avio(String codiA, String fabricantA, String modelA, int capacitatA){
+        codi = codiA;
+        fabricant = fabricantA;
+        model = modelA;
+        capacitat = capacitatA;
+        classes = new Classe[4];
+        posicioClasses = 0;
+    }
+    
   
 
     /*

@@ -42,7 +42,7 @@ public class RutaTransoceanica {
     - Heu de tenir en compte que els aeroports i països no tene per què estar formats
     per una única paraula, per exemple, El Prat i Regne Unit.
      */
-    public static RutaIntercontinental novaRutaTransoceanica() {
+    public static RutaTransoceanica novaRutaTransoceanica() {
         return null;
 
     }

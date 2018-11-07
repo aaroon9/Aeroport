@@ -14,7 +14,6 @@ public class Classe {
       
     private String nomClasse;
     private short capAvio;
-    private Classe classe[];
      /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe.
@@ -26,7 +25,6 @@ public class Classe {
         capAvio = pCapacitat;
         
     }
-
     /*
     Mètodes accessors    
     */

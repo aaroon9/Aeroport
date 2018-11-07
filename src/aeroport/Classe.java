@@ -13,7 +13,7 @@ package aeroport;
 public class Classe {
       
     private String nomAvio;
-    private int capAvio;
+    private short capAvio;
     
      /*
      CONSTRUCTOR
@@ -29,7 +29,18 @@ public class Classe {
     /*
     Mètodes accessors    
     */
-   
+    public String getNom(){
+        return nomAvio;
+    }
+    public short getcapacitat(){
+        return capAvio;
+    }
+    public void setNom(String pNom){
+        nomAvio = pNom;
+    }
+    public void setCapacitat(short pCapacitat){
+        capAvio = pCapacitat;
+    }
 
     /*
     Paràmetres: cap

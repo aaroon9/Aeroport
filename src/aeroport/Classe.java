@@ -14,7 +14,7 @@ public class Classe {
       
     private String nomClasse;
     private short capAvio;
-    
+    private Classe classe[];
      /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe.
@@ -24,6 +24,7 @@ public class Classe {
     public Classe(String pNom, short pCapacitat){
         nomClasse = pNom;
         capAvio = pCapacitat;
+        
     }
 
     /*
@@ -73,15 +74,26 @@ public class Classe {
      Retorn: cap
      */
     public void modificarClasse() {
-
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        short pCapacitat;
+        System.out.println("Parametres actuals de la classe:");
+        mostrarClasse();
+            
+        System.out.println("Introdueix el nou nom de la classe: ");
+            pNom = in.nextLine();
+                setNom(pNom);
+        System.out.println("Introdueix la nova capacitat de la classe: ");
+            pCapacitat = in.nextShort();
+                setCapacitat(pCapacitat);
     }
 
     public void mostrarClasse() {
         System.out.println("\nLa classe " + nomClasse + " té una capacitat de "+capAvio);
     }
 
-    Object getNom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //Object getNom() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
     
 }

@@ -12,8 +12,8 @@ package aeroport;
  */
 public class Classe {
       
-    private String nom;
-    private int capacitat;
+    private String nomAvio;
+    private int capAvio;
     
      /*
      CONSTRUCTOR
@@ -21,7 +21,10 @@ public class Classe {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    
+    public Classe(String pNom, short pCapacitat){
+        nomAvio = pNom;
+        capAvio = pCapacitat;
+    }
 
     /*
     Mètodes accessors    
@@ -39,7 +42,7 @@ public class Classe {
      */
     public static Classe novaClasse() {
         return null;
-        
+
     }
 
     /*
@@ -56,7 +59,7 @@ public class Classe {
     }
 
     public void mostrarClasse() {
-        System.out.println("\nLa classe " + nom + " té una capacitat de "+capacitat);
+        System.out.println("\nLa classe " + nomAvio + " té una capacitat de "+capAvio);
     }
 
     Object getNom() {

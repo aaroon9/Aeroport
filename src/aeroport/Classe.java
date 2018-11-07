@@ -4,7 +4,7 @@
  * 
  */
 package aeroport;
-
+import java.util.Scanner;
 
 /**
  *
@@ -12,7 +12,7 @@ package aeroport;
  */
 public class Classe {
       
-    private String nomAvio;
+    private String nomClasse;
     private short capAvio;
     
      /*
@@ -22,7 +22,7 @@ public class Classe {
      - Assignar als atributs els valors passats com a paràmetres.
      */
     public Classe(String pNom, short pCapacitat){
-        nomAvio = pNom;
+        nomClasse = pNom;
         capAvio = pCapacitat;
     }
 
@@ -30,13 +30,13 @@ public class Classe {
     Mètodes accessors    
     */
     public String getNom(){
-        return nomAvio;
+        return nomClasse;
     }
     public short getcapacitat(){
         return capAvio;
     }
     public void setNom(String pNom){
-        nomAvio = pNom;
+        nomClasse = pNom;
     }
     public void setCapacitat(short pCapacitat){
         capAvio = pCapacitat;
@@ -52,8 +52,15 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        return null;
-
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        short pCapacitat;
+        System.out.println("Introdueix un nombre de classe: ");
+            pNom = in.nextLine();
+        System.out.println("Introdueix la capacitat d'aquesta classe: ");
+            pCapacitat = in.nextShort();
+        
+        return new Classe(pNom,pCapacitat);
     }
 
     /*
@@ -70,7 +77,7 @@ public class Classe {
     }
 
     public void mostrarClasse() {
-        System.out.println("\nLa classe " + nomAvio + " té una capacitat de "+capAvio);
+        System.out.println("\nLa classe " + nomClasse + " té una capacitat de "+capAvio);
     }
 
     Object getNom() {

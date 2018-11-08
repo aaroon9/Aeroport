@@ -108,21 +108,22 @@ public class Avio {
     /*
      Paràmetres: cap
      Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-    i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-    actual, abans de modificar-los
+     - DONE:Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
+            i modificar els atributs corresponents d'aquest objecte.
+     - DONE:Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
+            actual, abans de modificar-los
      Retorn: cap
      */
     public void modificarAvio() {
         String codiA, fabricantA, modelA;
         int capacitatA, classes;
 
-        //demanem les dades a l'usuari i les assignem a variables
+        //MOstrem les dades de l'avio abans de la modificacio
         System.out.println("---Modificacio d'un avio---");
         System.out.println("\nLes dades actuals de l'avio son les seguents:")
         mostrarAvio();
 
+        //demanem les dades a l'usuari i les assignem a variables
         System.out.println("\nNoves dades:")
         System.out.println("Introdueix el codi de l'avio: ");
         codiA = in.nextLine();
@@ -133,6 +134,7 @@ public class Avio {
         System.out.println("Introdueix la capacitat de l'avio: ");
         capacitatA = in.nextInt();
 
+        //Modifiquem les dades
         setCodi(codiA);
         setFabricant(fabricantA);
         setModel(modelA);
@@ -151,47 +153,56 @@ public class Avio {
     /*
      Paràmetres: cap
      Accions:
-     - Afegeix una nova classe al vector de classes de l'avió actual si aquesta encara 
-     no s'ha afegit. S'ha de comprovar si s'ha afegit fent servir el mètode pertinent 
-     d'aquesta classe, i actualitzar la posició del vector de classes.
-     - Abans d'afegir la classe, també heu de comprovar que la seva capacitat sumada
-     a la capacitat de les altres classes de l'avió, no superi la capacitat total
-     de l'avió.
-     - Si l'ingredient ja s'havia afegit o bé la seva capacitat sumada a les capacitats 
-     de les altres classes supera la capacitat total de l'avió, no s'afegirà de nou i 
-     li mostrarem a l'usuari el missatge "\nLa classe no s'ha pogut afegir".
+     - DONE:Afegeix una nova classe al vector de classes de l'avió actual si aquesta encara
+            no s'ha afegit. S'ha de comprovar si s'ha afegit fent servir el mètode pertinent
+            d'aquesta classe, i actualitzar la posició del vector de classes.
+     - DONE:Abans d'afegir la classe, també heu de comprovar que la seva capacitat sumada
+            a la capacitat de les altres classes de l'avió, no superi la capacitat total
+            de l'avió.
+     - DONE:Si l'ingredient ja s'havia afegit o bé la seva capacitat sumada a les capacitats
+            de les altres classes supera la capacitat total de l'avió, no s'afegirà de nou i
+            li mostrarem a l'usuari el missatge "\nLa classe no s'ha pogut afegir".
      Retorn: cap
      */
     public void afegirClasse() {
         String nomClasse;
-        int capacitatClasse;
+        int capacitatClasse, capacitatTotal = 0;
+        boolean afegida = false;
 
+        //demanem les dades de la nova classe a l'usuari
         System.out.println("Afegir classe");
         System.out.println("Introdueix el nom de la classe:");
         nomClasse = in.nextLine();
         System.out.println("Introdueix la capacitat de la classe:");
         capacitatClasse = in.nextInt();
 
-        if(seleccionarClasse(nomClasse) != -1){
+        //Sumem la capacitat de la nova classe a una variable auxiliar de capacitat
+        capacitatTotal += capacitatClasse;
 
+        //Comprovem si la classe existeix
+        if(seleccionarClasse(nomClasse) == -1){
+            //Calculem la nova capacitat teorica que tindra l'avio
+            for(int i = 0; i < posicioClasses; i++){
+                capacitatTotal += Classe[i].capacitat;
+            }
+            //si es compleixen ambdues condicions es crea la classe
+            if(capacitatTotal <= capacitat){
+                novaClasse();
+                posicioClasses++;
+                //Marquem que esta afegida
+                afegida = true;
+            }
         }
-        capacitat >= classe[1].capacitat + ... + classe[4].capacitat;
 
-        if(afegit){
-            novaClasse();
-            posicioClasses++;
-        }
-
-        if(!afegit){
+        //Mostrem error en el cas de que no l'afegim
+        if(!afegida){
             System.out.println("\nLa classe no s'ha pogut afegir");
         }
     }
 
     public int seleccionarClasse(String nom) {
-
         boolean trobat = false;
         int pos = -1;
-
         for (int i = 0; i < posicioClasses && !trobat; i++) {
             if (classes[i].getNom().equals(nom)) {
                 pos = i;
@@ -204,4 +215,4 @@ public class Avio {
 
 }
 
-//v0.2
+//v1.0

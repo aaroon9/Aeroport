@@ -4,7 +4,7 @@
  * 
  */
 package aeroport;
-
+import java.util.Scanner;
 
 /**
  *
@@ -12,21 +12,34 @@ package aeroport;
  */
 public class Classe {
       
-    private String nom;
-    private int capacitat;
-    
+    private String nomClasse;
+    private short capAvio;
      /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe.
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    
-
+    public Classe(String pNom, short pCapacitat){
+        nomClasse = pNom;
+        capAvio = pCapacitat;
+        
+    }
     /*
     Mètodes accessors    
     */
-   
+    public String getNom(){
+        return nomClasse;
+    }
+    public short getcapacitat(){
+        return capAvio;
+    }
+    public void setNom(String pNom){
+        nomClasse = pNom;
+    }
+    public void setCapacitat(short pCapacitat){
+        capAvio = pCapacitat;
+    }
 
     /*
     Paràmetres: cap
@@ -38,8 +51,15 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        return null;
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        short pCapacitat;
+        System.out.println("Introdueix un nombre de classe: ");
+            pNom = in.nextLine();
+        System.out.println("Introdueix la capacitat d'aquesta classe: ");
+            pCapacitat = in.nextShort();
         
+        return new Classe(pNom,pCapacitat);
     }
 
     /*
@@ -52,15 +72,26 @@ public class Classe {
      Retorn: cap
      */
     public void modificarClasse() {
-
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        short pCapacitat;
+        System.out.println("Parametres actuals de la classe:");
+        mostrarClasse();
+            
+        System.out.println("Introdueix el nou nom de la classe: ");
+            pNom = in.nextLine();
+                setNom(pNom);
+        System.out.println("Introdueix la nova capacitat de la classe: ");
+            pCapacitat = in.nextShort();
+                setCapacitat(pCapacitat);
     }
 
     public void mostrarClasse() {
-        System.out.println("\nLa classe " + nom + " té una capacitat de "+capacitat);
+        System.out.println("\nLa classe " + nomClasse + " té una capacitat de "+capAvio);
     }
 
-    Object getNom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //Object getNom() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
     
 }

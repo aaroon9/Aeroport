@@ -45,7 +45,7 @@ public class Avio {
         return codi;
     }
 
-    public String setCodi(String pCodi){
+    public void setCodi(String pCodi){
         this.codi = pCodi
     }
 
@@ -53,7 +53,7 @@ public class Avio {
         return fabricant;
     }
 
-    public String setFabricant(String pFabricant){
+    public void setFabricant(String pFabricant){
         this.fabicant = pFabricant;
     }
 
@@ -61,7 +61,7 @@ public class Avio {
         return model;
     }
 
-    public String setModel(String pModel){
+    public void setModel(String pModel){
         this.model = pModel;
     }
 
@@ -69,7 +69,7 @@ public class Avio {
         return capacitat;
     }
 
-    public String setCapacitat(int pCapacitat){
+    public void setCapacitat(int pCapacitat){
         this.capacitat = pCapacitat;
     }
 
@@ -215,4 +215,4 @@ public class Avio {
 
 }
 
-//v1.0
+//v1.1

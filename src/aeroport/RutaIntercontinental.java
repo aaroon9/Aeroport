@@ -24,7 +24,7 @@ public class RutaIntercontinental {
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe.
      Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
+     - DONE: Assignar als atributs els valors passats com a paràmetres.
      */
     
     public RutaIntercontinental(String pCodi, String pAeroportOri, String pAeroprtDes, String pPaisOri, String pPaisDes, String pContinentOri, String pContinentDes, double pDistancia){
@@ -33,13 +33,63 @@ public class RutaIntercontinental {
         aeroprtDes = pAeroprtDes;
         paisOri = pPaisOri;
         paisDes = pPaisDes;
+        continentOri = pContinentOri;
+        continentDes = pContinentDes;
+        distancia = pDistancia;
     }
 
     
     /*
-    Mètodes accessors
+    DONE: Mètodes accessors
     */
-    
+    public String getCodi(){
+        return pCodi;
+    }
+    public void setCodi(pCodi){
+        this.codi = pCodi;
+    }
+    public String getAeroportOri(){
+        return pAeroportOri;
+    }
+    public void setAeroportOri(pAeroportOri){
+        this.aeroportOri = pAeroportOri;
+    }
+    public String getAeroportDes(){
+        return pAeroprtDes;
+    }
+    public void setAeroportDes(pAeroprtDes){
+        this.aeroprtDes = pAeroprtDes;
+    }
+    public String getPaisOri(){
+        return pPaisOri;
+    }
+    public void setPaisOri(pPaisOri){
+        this.paisOri = pPaisOri;
+    }
+    public String getPaisDes(){
+        return pPaisDes;
+    }
+    public void setPaisDes(pPaisDes){
+        this.paisDes = pPaisDes;
+    }
+    public String getContinentOri(){
+        return pContinentOri;
+    }
+    public void setContinentOri(pContinentOri){
+        this.continentOri = pContinentOri;
+    }
+    public String getContinentDes(){
+        return pContinentDes;
+    }
+    public void setContinentDes(pContinentDes){
+        this.continentDes = pContinentDes;
+    }
+    public String getDistancia(){
+        return pContinentDes;
+    }
+    public void setDistancia(pDistancia){
+        this.distancia = pDistancia;
+    }
     
    /*
     Paràmetres: cap
@@ -50,7 +100,19 @@ public class RutaIntercontinental {
     per una única paraula, per exemple, El Prat i Regne Unit.
      */
     public static RutaIntercontinental novaRutaIntercontinental() {
-        return null;
+        String codiA, fabricantA, modelA;
+        int capacitatA, classes;
+
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Creacio d'un nou avio");
+        System.out.println("Introdueix el codi de l'avio: ");
+        codiA = in.nextLine();
+        System.out.println("Introdueix el fabricant de l'avio: ");
+        fabricantA = in.nextLine();
+        System.out.println("Introdueix el model de l'avio: ");
+        modelA = in.nextLine();
+        System.out.println("Introdueix la capacitat de l'avio: ");
+        capacitatA = in.nextInt();
 
     }
 

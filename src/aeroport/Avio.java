@@ -163,7 +163,28 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
+        String nomClasse;
+        int capacitatClasse;
 
+        System.out.println("Afegir classe");
+        System.out.println("Introdueix el nom de la classe:");
+        nomClasse = in.nextLine();
+        System.out.println("Introdueix la capacitat de la classe:");
+        capacitatClasse = in.nextInt();
+
+        if(seleccionarClasse(nomClasse) != -1){
+
+        }
+        capacitat >= classe[1].capacitat + ... + classe[4].capacitat;
+
+        if(afegit){
+            novaClasse();
+            posicioClasses++;
+        }
+
+        if(!afegit){
+            System.out.println("\nLa classe no s'ha pogut afegir");
+        }
     }
 
     public int seleccionarClasse(String nom) {
@@ -182,3 +203,5 @@ public class Avio {
     }
 
 }
+
+//v0.2

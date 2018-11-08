@@ -17,47 +17,127 @@ public class Avio {
     private String model;
     private int capacitat;
     private Classe[] classes;
-    private int posicioClasses; //Atribut que controla la primera posició vuida del vector
+    private int posicioClasses; //Atribut que controla la primera posició buida del vector
 
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys classes i posicioClasses.
      Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-     - Inicialitzar el vector classes com a buit i una longitud de 4.
-     - Inicialitzar l'atribut possicioClasses a 0.
+     - DONE! Assignar als atributs els valors passats com a paràmetres.
+     - DONE! Inicialitzar el vector classes com a buit i una longitud de 4.
+     - DONE! Inicialitzar l'atribut possicioClasses a 0.
      */
+    public Avio(String pCodi, String pFabricant, String pModel, int pCapacitat){
+        codi = pCodi;
+        fabricant = pFabricant;
+        model = pModel;
+        capacitat = pCapacitat;
+        classes = new Classe[4];
+        posicioClasses = 0;
+    }
+    
   
 
     /*
     Mètodes accessors
      */
+    public String getCodi(){
+        return codi;
+    }
+
+    public String setCodi(String pCodi){
+        this.codi = pCodi
+    }
+
+    public String getFabricant(){
+        return fabricant;
+    }
+
+    public String setFabricant(String pFabricant){
+        this.fabicant = pFabricant;
+    }
+
+    public String getModel(){
+        return model;
+    }
+
+    public String setModel(String pModel){
+        this.model = pModel;
+    }
+
+    public String getCapacitat(){
+        return capacitat;
+    }
+
+    public String setCapacitat(int pCapacitat){
+        this.capacitat = pCapacitat;
+    }
 
 
     /*
     Paràmetres: cap
     Accions:
-    - Demanar a l'usuari les dades per consola per crear un nou avió.
-    Les dades a demanar són les que necessita el constructor.
-    - També heu de tenir en compte que el fabricant o model, no tenen perquè estar 
-    formats per una única paraula, per exemple, Airbus Company o Boing 777
+    - DONE: Demanar a l'usuari les dades per consola per crear un nou avió.
+            Les dades a demanar són les que necessita el constructor.
+    - DONE: També heu de tenir en compte que el fabricant o model, no tenen perquè estar
+            formats per una única paraula, per exemple, Airbus Company o Boing 777
     Retorn: El nou avió.
      */
     public static Avio nouAvio() {
-        return null;
+        String codiA, fabricantA, modelA;
+        int capacitatA, classes;
         
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Creacio d'un nou avio");
+        System.out.println("Introdueix el codi de l'avio: ");
+        codiA = in.nextLine();
+        System.out.println("Introdueix el fabricant de l'avio: ");
+        fabricantA = in.nextLine();
+        System.out.println("Introdueix el model de l'avio: ");
+        modelA = in.nextLine();
+        System.out.println("Introdueix la capacitat de l'avio: ");
+        capacitatA = in.nextInt();
+
+        //instanciem un nou avio
+        Avio avioNou = new Avio(codiA, fabricantA, modelA, capacitatA);
+
+        return avioNou;
     }
+
 
     /*
      Paràmetres: cap
      Accions:
      - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
+    i modificar els atributs corresponents d'aquest objecte.
      - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los
+    actual, abans de modificar-los
      Retorn: cap
      */
     public void modificarAvio() {
+        String codiA, fabricantA, modelA;
+        int capacitatA, classes;
+
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("---Modificacio d'un avio---");
+        System.out.println("\nLes dades actuals de l'avio son les seguents:")
+        mostrarAvio();
+
+        System.out.println("\nNoves dades:")
+        System.out.println("Introdueix el codi de l'avio: ");
+        codiA = in.nextLine();
+        System.out.println("Introdueix el fabricant de l'avio: ");
+        fabricantA = in.nextLine();
+        System.out.println("Introdueix el model de l'avio: ");
+        modelA = in.nextLine();
+        System.out.println("Introdueix la capacitat de l'avio: ");
+        capacitatA = in.nextInt();
+
+        setCodi(codiA);
+        setFabricant(fabricantA);
+        setModel(modelA);
+        setCapacitat(capacitatA);
+
 
     }
 
@@ -83,7 +163,28 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
+        String nomClasse;
+        int capacitatClasse;
 
+        System.out.println("Afegir classe");
+        System.out.println("Introdueix el nom de la classe:");
+        nomClasse = in.nextLine();
+        System.out.println("Introdueix la capacitat de la classe:");
+        capacitatClasse = in.nextInt();
+
+        if(seleccionarClasse(nomClasse) != -1){
+
+        }
+        capacitat >= classe[1].capacitat + ... + classe[4].capacitat;
+
+        if(afegit){
+            novaClasse();
+            posicioClasses++;
+        }
+
+        if(!afegit){
+            System.out.println("\nLa classe no s'ha pogut afegir");
+        }
     }
 
     public int seleccionarClasse(String nom) {
@@ -102,3 +203,5 @@ public class Avio {
     }
 
 }
+
+//v0.2

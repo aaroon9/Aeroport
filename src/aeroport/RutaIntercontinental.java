@@ -27,6 +27,14 @@ public class RutaIntercontinental {
      - Assignar als atributs els valors passats com a paràmetres.
      */
     
+    public RutaIntercontinental(String pCodi, String pAeroportOri, String pAeroprtDes, String pPaisOri, String pPaisDes, String pContinentOri, String pContinentDes, double pDistancia){
+        codi = pCodi;
+        aeroportOri = pAeroportOri;
+        aeroprtDes = pAeroprtDes;
+        paisOri = pPaisOri;
+        paisDes = pPaisDes;
+    }
+
     
     /*
     Mètodes accessors

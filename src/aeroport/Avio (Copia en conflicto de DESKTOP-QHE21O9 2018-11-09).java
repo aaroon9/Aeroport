@@ -1,16 +1,15 @@
 /*
  * Un avió es defineix pel seu codi, fabricant, model, capacitat i un vector amb 
  * les seves classes.
- * v1.2
  */
-
 package aeroport;
+
+
 
 /**
  *
  * @author root
  */
-
 public class Avio {
 
     private String codi;
@@ -36,7 +35,8 @@ public class Avio {
         classes = new Classe[4];
         posicioClasses = 0;
     }
-
+    
+  
 
     /*
     Mètodes accessors
@@ -84,22 +84,22 @@ public class Avio {
     Retorn: El nou avió.
      */
     public static Avio nouAvio() {
-        String pCodi, pFabricant, pModel;
-        int pCapacitat;
+        String codiA, fabricantA, modelA;
+        int capacitatA, classes;
         
         //demanem les dades a l'usuari i les assignem a variables
         System.out.println("Creacio d'un nou avio");
         System.out.println("Introdueix el codi de l'avio: ");
-        pCodi = in.nextLine();
+        codiA = in.nextLine();
         System.out.println("Introdueix el fabricant de l'avio: ");
-        pFabricant = in.nextLine();
+        fabricantA = in.nextLine();
         System.out.println("Introdueix el model de l'avio: ");
-        pModel = in.nextLine();
+        modelA = in.nextLine();
         System.out.println("Introdueix la capacitat de l'avio: ");
-        pCapacitat = in.nextInt();
+        capacitatA = in.nextInt();
 
         //instanciem un nou avio
-        Avio avioNou = new Avio(pCodi, pFabricant, pModel, pCapacitat);
+        Avio avioNou = new Avio(codiA, fabricantA, modelA, capacitatA);
 
         return avioNou;
     }
@@ -115,10 +115,10 @@ public class Avio {
      Retorn: cap
      */
     public void modificarAvio() {
-        String pCodi, pFabricant, pModel;
-        int pCapacitat;
+        String codiA, fabricantA, modelA;
+        int capacitatA, classes;
 
-        //Mostrem les dades de l'avio abans de la modificacio
+        //MOstrem les dades de l'avio abans de la modificacio
         System.out.println("---Modificacio d'un avio---");
         System.out.println("\nLes dades actuals de l'avio son les seguents:")
         mostrarAvio();
@@ -126,21 +126,22 @@ public class Avio {
         //demanem les dades a l'usuari i les assignem a variables
         System.out.println("\nNoves dades:")
         System.out.println("Introdueix el codi de l'avio: ");
-        pCodi = in.nextLine();
+        codiA = in.nextLine();
         System.out.println("Introdueix el fabricant de l'avio: ");
-        pFabricant = in.nextLine();
+        fabricantA = in.nextLine();
         System.out.println("Introdueix el model de l'avio: ");
-        pModel = in.nextLine();
+        modelA = in.nextLine();
         System.out.println("Introdueix la capacitat de l'avio: ");
-        pCapacitat = in.nextInt();
+        capacitatA = in.nextInt();
 
         //Modifiquem les dades
-        setCodi(pCodi);
-        setFabricant(pFabricant);
-        setModel(pModel);
-        setCapacitat(pCapacitat);
-    }
+        setCodi(codiA);
+        setFabricant(fabricantA);
+        setModel(modelA);
+        setCapacitat(capacitatA);
 
+
+    }
 
     public void mostrarAvio() {
         System.out.println("\nLes dades de l'avió amb codi " + codi + " són:");
@@ -148,7 +149,6 @@ public class Avio {
         System.out.println("\nModel: " + model);
         System.out.println("\nCapacitat: " + capacitat);
     }
-
 
     /*
      Paràmetres: cap
@@ -200,7 +200,6 @@ public class Avio {
         }
     }
 
-
     public int seleccionarClasse(String nom) {
         boolean trobat = false;
         int pos = -1;
@@ -210,7 +209,10 @@ public class Avio {
                 trobat = true;
             }
         }
+
         return pos;
     }
+
 }
 
+//v1.1

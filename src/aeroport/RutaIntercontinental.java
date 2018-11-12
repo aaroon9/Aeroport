@@ -2,10 +2,11 @@
  * Una ruta intercontinental es defineix pel seu codi, aeroport d’origen, aeroport 
  * de destí, distància, país d’origen, país de destí, continent d’origen i continent 
  * de destí
- * v1.1
+ * v1.2
  */
 
 package aeroport;
+import java.util.Scanner;
 
 /**
  *
@@ -103,6 +104,7 @@ public class RutaIntercontinental {
             per una única paraula, per exemple, El Prat i Regne Unit.
      */
     public static RutaIntercontinental novaRutaIntercontinental() {
+        Scanner in = new Scanner(System.in);
         String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
         double pDistancia;
 
@@ -143,6 +145,7 @@ public class RutaIntercontinental {
      Retorn: cap
      */
     public void modificarRutaIntercontinental() {
+        Scanner in = new Scanner(System.in);
         String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
         double pDistancia;
 

@@ -1,9 +1,11 @@
 /*
  * Un tripulant de cabina de passatgers (TCP) es defineix pel seu passaport, nom
  * , edat, data d’alta en la companyia, hores que porta de vol i rang
+ * v0.1
  */
 package aeroport;
 
+import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
@@ -12,6 +14,7 @@ import java.util.Date;
  *
  * @author root
  */
+
 public class TCP {
 
     private String passaport;
@@ -25,17 +28,72 @@ public class TCP {
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys dataAlta rang.
      Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
+     - DONE:Assignar als atributs els valors passats com a paràmetres.
      - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - Inicialitzar l'atribut rang a null, ja que quan es crea un TCP, mai té rang.
      */
-    
+    public TCP(String pPassaport, String pNom, int pEdat, Date pDataAlta, 
+            LocalTime pHoresVol, String pRang){
+        passaport = pPassaport;
+        nom = pNom;
+        edat = pEdat;
+        SimpleDateFormat dataAlta = new SimpleDateFormat("hh:mm:ss");
+        horesVol = pHoresVol;
+        rang = null;
+    }
 
     /*
     Mètodes accessors
      */
-    
+    public String getPassaport(){
+        return passaport;
+    }
 
+    public void setPassaport(String pPassaport){
+        this.passaport = pPassaport;
+    }
+
+    public String getNom(){
+        return nom;
+    }
+
+    public void setNom(String pNom){
+        this.nom = pNom;
+    }
+
+    public int getEdat(){
+        return edat;
+    }
+
+    public void setEdat(int pEdat){
+        this.edat = pEdat;
+    }
+    
+    public Date getDataAlta(){
+        return dataAlta;
+    }
+
+    public void setDataAlta(Date pDataAlta){
+        this.dataAlta = pDataAlta;
+    }
+
+    public LocalTime getHoresVol(){
+        return horesVol;
+    }
+
+    public void setHoresVol(LocalTime pHoresVol){
+        this.horesVol = pHoresVol;
+    }
+    
+    public String getRang(){
+        return rang;
+    }
+
+    public void setRang(String pRang){
+        this.nom = pRang;
+    }
+    
+    
     /*
     Paràmetres: cap
     Accions:

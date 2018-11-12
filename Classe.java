@@ -1,7 +1,7 @@
 /*
- * Defineix una classe d’un avió. Una classe d’un avió es defineix pel seu nom 
+ * Defineix una classe d’un avió. Una classe d’un avió es defineix pel seu nom
  * (no pot haver-hi un avió amb dues classes amb el mateix nom) i capacitat.
- * 
+ *
  */
 package aeroport;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author root
  */
 public class Classe {
-      
+
     private String nomClasse;
     private short capAvio;
      /*
@@ -23,10 +23,10 @@ public class Classe {
     public Classe(String pNom, short pCapacitat){
         nomClasse = pNom;
         capAvio = pCapacitat;
-        
+
     }
     /*
-    Mètodes accessors    
+    Mètodes accessors
     */
     public String getNom(){
         return nomClasse;
@@ -44,7 +44,7 @@ public class Classe {
     /*
     Paràmetres: cap
     Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova classe d'avió. 
+    - Demanar a l'usuari les dades per consola per crear una nova classe d'avió.
       Les dades a demanar són les que necessita el constructor.
     - També heu de tenir en compte que el nom, no té perquè estar formt per una única
     paraula, per exemple, Turista Preferent.
@@ -58,7 +58,7 @@ public class Classe {
             pNom = in.nextLine();
         System.out.println("Introdueix la capacitat d'aquesta classe: ");
             pCapacitat = in.nextShort();
-        
+
         return new Classe(pNom,pCapacitat);
     }
 
@@ -77,7 +77,7 @@ public class Classe {
         short pCapacitat;
         System.out.println("Parametres actuals de la classe:");
         mostrarClasse();
-            
+
         System.out.println("Introdueix el nou nom de la classe: ");
             pNom = in.nextLine();
                 setNom(pNom);
@@ -93,5 +93,5 @@ public class Classe {
     //Object getNom() {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     //}
-    
+
 }

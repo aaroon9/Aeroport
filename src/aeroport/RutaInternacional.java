@@ -36,6 +36,42 @@ public class RutaInternacional {
     /*
     Mètodes accessors
      */
+        public String getCodi(){
+        return codi;
+    }
+    public void setCodi(String pCodi){
+        this.codi = pCodi;
+    }
+    public String getAeroportOri(){
+        return aeroportOri;
+    }
+    public void setAeroportOri(String pAeroportOri){
+        this.aeroportOri = pAeroportOri;
+    }
+    public String getAeroportDes(){
+        return aeroportDes;
+    }
+    public void setAeroportDes(String pAeroprtDes){
+        this.aeroportDes = pAeroprtDes;
+    }
+    public String getPaisOri(){
+        return paisOri;
+    }
+    public void setPaisOri(String pPaisOri){
+        this.paisOri = pPaisOri;
+    }
+    public String getPaisDes(){
+        return paisDes;
+    }
+    public void setPaisDes(String pPaisDes){
+        this.paisDes = pPaisDes;
+    }
+    public double getDistancia(){
+        return distancia;
+    }
+    public void setDistancia(double pDistancia){
+        this.distancia = pDistancia;
+    }
 
 
     /*

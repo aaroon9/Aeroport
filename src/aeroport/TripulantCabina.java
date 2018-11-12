@@ -123,6 +123,43 @@ public class TripulantCabina {
     Retorn: El nou tripulant de cabina.
      */
     public static TripulantCabina nouTripulantCabina() {
+        Scanner in = new Scanner (System.in);
+        String pPass, pNom,pRang;
+        int pEdat, hores, minuts;
+        
+        LocalTime pHoresVol;
+        boolean rang = false;
+        System.out.println("/* Nou Tripulant de Cabina */");
+        System.out.println("Introduexi un passaport per el tripulant: ");
+        pPass = in.nextLine();
+        System.out.println("Introdueix un nom per el tripulant: ");
+        pNom = in.nextLine();
+        System.out.println("Introdueix una edat per el tripulant: ");
+        pEdat = in.nextInt();
+        System.out.println("Introdueix les hores del vol: ");
+        hores = in.nextInt();
+        System.out.println("Introdueix els minuts del vol: ");
+        minuts = in.nextInt();
+        pHoresVol = LocalTime.of(hores, minuts);
+        do{
+            System.out.println("Intrdoueix un rang per al tripulant (C)-> Comandant, (CP)-> Copilot, (EV)-> enginyer de vol. ");
+            pRang = in.nextLine();
+            if(pRang != "CP" || pRang != "C" || pRang != "EV"){
+                System.out.println("El rang introduït no és correcte");
+            }else if(pRang == "C"){
+                pRang = "Comandant";
+                rang = true;
+            }else if(pRang == "CP"){
+                pRang = "Copilot";
+                rang = true;
+            }else if (pRang == "EV"){
+                pRang = "Enginyer de vol";
+                rang = true;
+            }
+        }
+        while( rang != true);
+        
+        TripulantCabina nouTripulant = new TripulantCabina( pPass, pNom,pEdat,pHoresVol,pRang);
         return null;
         
     }

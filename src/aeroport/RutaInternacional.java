@@ -3,7 +3,7 @@
  * de destí, distància, país d’origen i país de destí
  */
 package aeroport;
-
+import java.util.Scanner;
 
 /**
  *
@@ -83,8 +83,28 @@ public class RutaInternacional {
     paraula, per exemple, El Prat o Regne Unit.
      */
     public static RutaInternacional novaRutaInternacional() {
+        Scanner in = new Scanner (System.in);
+        String pCodi;
+        String pAeroportOrigen; 
+        String pAeroportDest; 
+        String pPaisOri;
+        String pPaisDes;
+        double pDistancia;
+        System.out.println("Introdueix un Codi per la nova ruta: ");
+        pCodi = in.nextLine();
+        System.out.println("Introdueix un aeroport d'origen: ");
+        pAeroportOrigen = in.nextLine();
+        System.out.println("Introdueix un aeroport d'esti: ");
+        pAeroportDest = in.nextLine();
+        System.out.println("Introdueix un pais Origen: ");
+        pPaisOri = in.nextLine();
+        System.out.println("Introdueix un pais Desti: ");
+        pPaisDes = in.nextLine();
+        System.out.println("Introdueix la distancia que es recorrerà: ");
+        pDistancia = in.nextDouble();
+        
+        RutaInternacional rutaInternacional = new RutaInternacional( pCodi, pAeroportOrigen, pAeroportDest, pPaisOri, pPaisDes, pDistancia);
         return null;
-       
     }
 
     /*

@@ -152,7 +152,7 @@ public class RutaTransoceanica {
      */
     public void modificarRutaTransoceanica() {
         Scanner in = new Scanner (System.in);
-        String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
+        String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes, pOcea;
         double pDistancia;
 
         //Mostrem les dades de la ruta abans de la modificacio
@@ -176,6 +176,8 @@ public class RutaTransoceanica {
         pContinentOri = in.nextLine();
         System.out.println("Introdueix el continent de desti: ");
         pContinentDes = in.nextLine();
+        System.out.println("Introdueix el nou ocea que es sobrevola: ");
+        pOcea = in.nextLine();
         System.out.println("Introdueix la distancia total de la ruta: ");
         pDistancia = in.nextDouble();
 
@@ -185,6 +187,7 @@ public class RutaTransoceanica {
         setAeroportDes(pAeroprtDes);
         setPaisOri(pPaisOri);
         setPaisDes(pPaisDes);
+        setOcea(pOcea);
         setDistancia(pDistancia);
 
     }

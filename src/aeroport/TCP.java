@@ -1,7 +1,7 @@
 /*
  * Un tripulant de cabina de passatgers (TCP) es defineix pel seu passaport, nom
  * , edat, data d’alta en la companyia, hores que porta de vol i rang
- * v0.1
+ * v0.2
  */
 package aeroport;
 
@@ -37,7 +37,7 @@ public class TCP {
         passaport = pPassaport;
         nom = pNom;
         edat = pEdat;
-        SimpleDateFormat dataAlta = new SimpleDateFormat("hh:mm:ss");
+        dataAlta = pDataAlta;
         horesVol = pHoresVol;
         rang = null;
     }
@@ -97,16 +97,53 @@ public class TCP {
     /*
     Paràmetres: cap
     Accions:
-    - Demanar a l'usuari les dades per consola per crear un nou TCP.
-    Les dades a demanar són les que necessita el constructor.
-    - Heu de tenir en compte que el nom no té per què estar format per una única 
-    paraula, per exemple, Pep Gómez.
-    - També heu de tenir en compte que les hores de vol són de tipus LocalTime, per
-    tant heu de demanar a l'usuari les hores i minuts per crear el LocalTime. En aquest
-    cas es considerarà que els segons i nanosegons, sempre són  0.
+    - DONE: Demanar a l'usuari les dades per consola per crear un nou TCP.
+            Les dades a demanar són les que necessita el constructor.
+    - DONE: Heu de tenir en compte que el nom no té per què estar format per una única 
+            paraula, per exemple, Pep Gómez.
+    - DONE: També heu de tenir en compte que les hores de vol són de tipus LocalTime, per
+            tant heu de demanar a l'usuari les hores i minuts per crear el LocalTime. En aquest
+            cas es considerarà que els segons i nanosegons, sempre són  0.
      */
-    public static TCP nouTCP() {
-        return null;
+    public static TCP nouTCP() throws ParseException {
+        Scanner in = new Scanner(System.in);
+        String pPassaport, pNom, pRang;
+        int pEdat, hores, minuts;
+        LocalTime pHoresVol;
+        Date pDataAlta;
+        
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Creacio d'un nou TCP");
+        System.out.println("Introdueix el passaport del TCP: ");
+        pPassaport = in.nextLine();
+        System.out.println("Introdueix el nom del TCP: ");
+        pNom = in.nextLine();
+        System.out.println("Introdueix el rang del TCP: ");
+        pRang = in.nextLine();
+        System.out.println("Introdueix l'edat del TCP: ");
+        pEdat = in.nextInt();        
+        System.out.println("Introdueix les hores i minuts de vol del TCP: ");
+        System.out.println("Hores: ");
+        hores = in.nextInt();
+        System.out.println("Minuts: ");
+        minuts = in.nextInt();
+        pHoresVol = LocalTime.of(hores,minuts);
+        
+        
+        //Esta ta mal
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss");
+
+        String date = simpleDateFormat.format(new Date());
+        System.out.println(date);
+
+        SimpleDateFormat formatData= new SimpleDateFormat("hh:mm:ss a dd-MM-yyyy");
+        
+        pDataAlta = new SimpleDateFormat("hh:mm:ss").parse(date);
+
+        //instanciem un nou avio
+        TCP TCPnou = new TCP(pPassaport, pNom, pEdat, pDataAlta, pHoresVol, pRang);
+
+        return TCPnou;
        
     }
 

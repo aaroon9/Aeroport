@@ -151,6 +151,41 @@ public class RutaTransoceanica {
      Retorn: cap
      */
     public void modificarRutaTransoceanica() {
+        Scanner in = new Scanner (System.in);
+        String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
+        double pDistancia;
+
+        //Mostrem les dades de la ruta abans de la modificacio
+        System.out.println("---Modificacio d'una ruta intercontinental---");
+        System.out.println("Les dades actuals de la ruta son les seguents:");
+        mostrarRutaTransoceanica();
+
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Noves dades:");
+        System.out.println("Introdueix el codi de la ruta: ");
+        pCodi = in.nextLine();
+        System.out.println("Introdueix l'aeroport d'origen: ");
+        pAeroportOri = in.nextLine();
+        System.out.println("Introdueix l'aeroport de desti: ");
+        pAeroprtDes = in.nextLine();
+        System.out.println("Introdueix el pais d'origen: ");
+        pPaisOri = in.nextLine();
+        System.out.println("Introdueix el pais de desti: ");
+        pPaisDes = in.nextLine();
+        System.out.println("Introdueix el continent d'origen: ");
+        pContinentOri = in.nextLine();
+        System.out.println("Introdueix el continent de desti: ");
+        pContinentDes = in.nextLine();
+        System.out.println("Introdueix la distancia total de la ruta: ");
+        pDistancia = in.nextDouble();
+
+        //Modifiquem les dades
+        setCodi(pCodi);
+        setAeroportOri(pAeroportOri);
+        setAeroportDes(pAeroprtDes);
+        setPaisOri(pPaisOri);
+        setPaisDes(pPaisDes);
+        setDistancia(pDistancia);
 
     }
 

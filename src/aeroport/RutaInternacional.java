@@ -118,7 +118,7 @@ public class RutaInternacional {
      Retorn: cap
      */
     public void modificarRutaInternacional() {
-                Scanner in = new Scanner (System.in);
+        Scanner in = new Scanner (System.in);
         String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
         double pDistancia;
 
@@ -139,10 +139,6 @@ public class RutaInternacional {
         pPaisOri = in.nextLine();
         System.out.println("Introdueix el pais de desti: ");
         pPaisDes = in.nextLine();
-        System.out.println("Introdueix el continent d'origen: ");
-        pContinentOri = in.nextLine();
-        System.out.println("Introdueix el continent de desti: ");
-        pContinentDes = in.nextLine();
         System.out.println("Introdueix la distancia total de la ruta: ");
         pDistancia = in.nextDouble();
 

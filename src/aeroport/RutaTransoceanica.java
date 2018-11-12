@@ -42,7 +42,60 @@ public class RutaTransoceanica {
     /*
     Mètodes accessors
     */
-    
+    public String getCodi(){
+        return codi;
+    }
+    public void setCodi(String pCodi){
+        this.codi = pCodi;
+    }
+    public String getAeroportOri(){
+        return aeroportOri;
+    }
+    public void setAeroportOri(String pAeroportOri){
+        this.aeroportOri = pAeroportOri;
+    }
+    public String getAeroportDes(){
+        return aeroportDes;
+    }
+    public void setAeroportDes(String pAeroprtDes){
+        this.aeroportDes = pAeroprtDes;
+    }
+    public String getPaisOri(){
+        return paisOri;
+    }
+    public void setPaisOri(String pPaisOri){
+        this.paisOri = pPaisOri;
+    }
+    public String getPaisDes(){
+        return paisDes;
+    }
+    public void setPaisDes(String pPaisDes){
+        this.paisDes = pPaisDes;
+    }
+    public String getContinentOri(){
+        return continentOri;
+    }
+    public void setContinentOri( String pContinentOri){
+        this.continentOri = pContinentOri;
+    }
+    public String getContinentDes(){
+        return continentDes;
+    }
+    public void setContinetDes(String pContinentDes){
+        this.continentDes = pContinentDes;
+    }
+    public String getOcea(){
+        return ocea;
+    }
+    public void setOcea(String pOcea){
+        this.ocea = pOcea;
+    }
+    public double getDistancia(){
+        return distancia;
+    }
+    public void setDistancia(double pDistancia){
+        this.distancia = pDistancia;
+    }
     
    /*
     Paràmetres: cap

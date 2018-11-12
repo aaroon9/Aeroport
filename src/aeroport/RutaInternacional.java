@@ -36,7 +36,7 @@ public class RutaInternacional {
     /*
     Mètodes accessors
      */
-        public String getCodi(){
+    public String getCodi(){
         return codi;
     }
     public void setCodi(String pCodi){

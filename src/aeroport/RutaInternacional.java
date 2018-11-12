@@ -24,12 +24,19 @@ public class RutaInternacional {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-
+    public RutaInternacional(String pCodi, String pAeroportOrigen, String pAeroportDest, String pPaisOri, String pPaisDes, double pDistancia){
+        codi = pCodi;
+        aeroportOri = pAeroportOrigen;
+        aeroportDes = pAeroportDest;
+        paisOri = pPaisOri;
+        paisDes = pPaisDes;
+        distancia = pDistancia;
+    };
 
     /*
     Mètodes accessors
      */
-    
+
 
     /*
     Paràmetres: cap

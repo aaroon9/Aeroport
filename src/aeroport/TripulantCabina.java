@@ -33,7 +33,15 @@ public class TripulantCabina {
      - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - Inicialitzar l'atribut barres mitjançant el mètode pertinent d'aquesta classe.
      */
-
+    public TripulantCabina(String pPass, String pNom, int pEdat, LocalTime pHoresVol, String pRang){
+       passaport = pPass;
+       nom = pNom;
+       edat = pEdat;
+       SimpleDateFormat dataAlta= new SimpleDateFormat("hh:mm:ss");
+       horesVol = pHoresVol;
+       rang = pRang;
+       barres = assignarBarres(pRang);
+    }
 
     /*
     Mètodes accessors
@@ -112,8 +120,8 @@ public class TripulantCabina {
      en el cas del comandant sempre 4 i en el cas de l'enginyer de vol sempre 1.
      Retorn: número de barres
      */
-    public void assignarBarres(String pRang) {
-
+    public int assignarBarres(String pRang) {
+        return 1;
 
     }
 

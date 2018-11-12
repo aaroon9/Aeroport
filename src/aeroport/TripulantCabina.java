@@ -46,7 +46,61 @@ public class TripulantCabina {
     /*
     Mètodes accessors
      */
+    public String getPassaport(){
+        return passaport;
+    }
+
+    public void setPassaport(String pPassaport){
+        this.passaport = pPassaport;
+    }
+
+    public String getNom(){
+        return nom;
+    }
+
+    public void setNom(String pNom){
+        this.nom = pNom;
+    }
+
+    public int getEdat(){
+        return edat;
+    }
+
+    public void setEdat(int pEdat){
+        this.edat = pEdat;
+    }
     
+    public Date getDataAlta(){
+        return dataAlta;
+    }
+
+    public void setDataAlta(Date pDataAlta){
+        this.dataAlta = pDataAlta;
+    }
+
+    public LocalTime getHoresVol(){
+        return horesVol;
+    }
+
+    public void setHoresVol(LocalTime pHoresVol){
+        this.horesVol = pHoresVol;
+    }
+    
+    public String getRang(){
+        return rang;
+    }
+
+    public void setRang(String pRang){
+        this.nom = pRang;
+    }
+    
+    /*public int getBarres(){
+        return barres;
+    }
+    
+    public int setBarres(){
+        this.barres = assignarBarres(pRang);
+    }*/
 
     /*
     Paràmetres: cap

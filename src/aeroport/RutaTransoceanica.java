@@ -4,7 +4,7 @@
  * de destí i oceà que sobrevola.
  */
 package aeroport;
-
+import java.util.Scanner;
 /**
  *
  * @author root
@@ -106,6 +106,36 @@ public class RutaTransoceanica {
     per una única paraula, per exemple, El Prat i Regne Unit.
      */
     public static RutaTransoceanica novaRutaTransoceanica() {
+        Scanner in = new Scanner (System.in);
+        String pCodi;
+        String pAeroportOrigen; 
+        String pAeroportDest; 
+        String pPaisOri;
+        String pPaisDes;
+        String pContinentOri;
+        String pContinentDes;
+        String pOcea;
+        double pDistancia;
+        System.out.println("Introdueix un Codi per la nova ruta: ");
+        pCodi = in.nextLine();
+        System.out.println("Introdueix un aeroport d'origen: ");
+        pAeroportOrigen = in.nextLine();
+        System.out.println("Introdueix un aeroport d'esti: ");
+        pAeroportDest = in.nextLine();
+        System.out.println("Introdueix un pais Origen: ");
+        pPaisOri = in.nextLine();
+        System.out.println("Introdueix un pais Desti: ");
+        pPaisDes = in.nextLine();
+        System.out.println("Introdueix un continent d'origen: ");
+        pContinentOri = in.nextLine();
+        System.out.println("Introdueix un continent de desti: ");
+        pContinentDes = in.nextLine();
+        System.out.println("Introdueix l'ocea que es sobrevola: ");
+        pOcea = in.nextLine();
+        System.out.println("Introdueix la distancia que es recorrerà: ");
+        pDistancia = in.nextDouble();
+        
+        RutaTransoceanica rutaTransoceanica = new RutaTransoceanica(pCodi,pAeroportOrigen,pAeroportDest,pPaisOri,pPaisDes,pContinentOri,pContinentDes, pOcea,pDistancia);
         return null;
 
     }

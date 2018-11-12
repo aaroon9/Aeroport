@@ -1,10 +1,11 @@
 /*
  * Un avió es defineix pel seu codi, fabricant, model, capacitat i un vector amb 
  * les seves classes.
- * v1.3
+ * v1.4
  */
 
 package aeroport;
+import java.util.Scanner;
 
 /**
  *
@@ -84,6 +85,7 @@ public class Avio {
     Retorn: El nou avió.
      */
     public static Avio nouAvio() {
+        Scanner in = new Scanner(System.in);
         String pCodi, pFabricant, pModel;
         int pCapacitat;
         
@@ -115,6 +117,7 @@ public class Avio {
      Retorn: cap
      */
     public void modificarAvio() {
+        Scanner in = new Scanner(System.in);
         String pCodi, pFabricant, pModel;
         int pCapacitat;
 
@@ -165,6 +168,7 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
+        Scanner in = new Scanner(System.in);
         String nomClasse;
         int capacitatClasse, capacitatTotal = 0;
         boolean afegida = false;

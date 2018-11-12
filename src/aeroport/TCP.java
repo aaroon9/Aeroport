@@ -28,9 +28,9 @@ public class TCP {
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys dataAlta rang.
      Accions:
-     - DONE:Assignar als atributs els valors passats com a paràmetres.
-     - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
-     - Inicialitzar l'atribut rang a null, ja que quan es crea un TCP, mai té rang.
+     - DONE: Assignar als atributs els valors passats com a paràmetres.
+     - DONE: Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
+     - DONE: Inicialitzar l'atribut rang a null, ja que quan es crea un TCP, mai té rang.
      */
     public TCP(String pPassaport, String pNom, int pEdat, Date pDataAlta, 
             LocalTime pHoresVol, String pRang){

@@ -94,13 +94,13 @@ public class TripulantCabina {
         this.nom = pRang;
     }
     
-    /*public int getBarres(){
+    public int getBarres(){
         return barres;
     }
     
-    public int setBarres(){
-        this.barres = assignarBarres(pRang);
-    }*/
+    public void setBarres(int pBarres){
+        this.barres = pBarres;
+    }
 
     /*
     Paràmetres: cap

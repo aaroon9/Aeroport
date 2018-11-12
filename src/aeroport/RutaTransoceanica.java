@@ -27,7 +27,17 @@ public class RutaTransoceanica {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    
+    public RutaTransoceanica(String pCodi, String pAeroportOri, String pAeroportDes, String pPaisOri, String pPaisDes, String pContinentOri, String pContinentDes, String pOcea,  double pDistancia){
+        codi = pCodi;
+        aeroportOri = pAeroportOri;
+        aeroportDes = pAeroportDes;
+        paisOri = pPaisOri;
+        paisDes = pPaisDes;
+        continentOri = pContinentOri;
+        continentDes = pContinentDes;
+        ocea = pOcea;
+        distancia = pDistancia;
+    }
     
     /*
     Mètodes accessors

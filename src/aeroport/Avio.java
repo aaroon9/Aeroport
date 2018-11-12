@@ -1,7 +1,7 @@
 /*
  * Un avió es defineix pel seu codi, fabricant, model, capacitat i un vector amb 
  * les seves classes.
- * v1.2
+ * v1.3
  */
 
 package aeroport;
@@ -46,7 +46,7 @@ public class Avio {
     }
 
     public void setCodi(String pCodi){
-        this.codi = pCodi
+        this.codi = pCodi;
     }
 
     public String getFabricant(){
@@ -54,7 +54,7 @@ public class Avio {
     }
 
     public void setFabricant(String pFabricant){
-        this.fabicant = pFabricant;
+        this.fabricant = pFabricant;
     }
 
     public String getModel(){
@@ -65,7 +65,7 @@ public class Avio {
         this.model = pModel;
     }
 
-    public String getCapacitat(){
+    public int getCapacitat(){
         return capacitat;
     }
 
@@ -120,11 +120,11 @@ public class Avio {
 
         //Mostrem les dades de l'avio abans de la modificacio
         System.out.println("---Modificacio d'un avio---");
-        System.out.println("\nLes dades actuals de l'avio son les seguents:")
+        System.out.println("\nLes dades actuals de l'avio son les seguents:");
         mostrarAvio();
 
         //demanem les dades a l'usuari i les assignem a variables
-        System.out.println("\nNoves dades:")
+        System.out.println("\nNoves dades:");
         System.out.println("Introdueix el codi de l'avio: ");
         pCodi = in.nextLine();
         System.out.println("Introdueix el fabricant de l'avio: ");

@@ -2,7 +2,7 @@
  * Una ruta intercontinental es defineix pel seu codi, aeroport d’origen, aeroport 
  * de destí, distància, país d’origen, país de destí, continent d’origen i continent 
  * de destí
- * v1.0
+ * v1.1
  */
 
 package aeroport;
@@ -32,7 +32,7 @@ public class RutaIntercontinental {
     public RutaIntercontinental(String pCodi, String pAeroportOri, String pAeroprtDes, String pPaisOri, String pPaisDes, String pContinentOri, String pContinentDes, double pDistancia){
         codi = pCodi;
         aeroportOri = pAeroportOri;
-        aeroprtDes = pAeroprtDes;
+        aeroportDes = pAeroprtDes;
         paisOri = pPaisOri;
         paisDes = pPaisDes;
         continentOri = pContinentOri;
@@ -45,51 +45,51 @@ public class RutaIntercontinental {
     DONE: Mètodes accessors
     */
     public String getCodi(){
-        return pCodi;
+        return codi;
     }
-    public void setCodi(pCodi){
+    public void setCodi(String pCodi){
         this.codi = pCodi;
     }
     public String getAeroportOri(){
-        return pAeroportOri;
+        return aeroportOri;
     }
-    public void setAeroportOri(pAeroportOri){
+    public void setAeroportOri(String pAeroportOri){
         this.aeroportOri = pAeroportOri;
     }
     public String getAeroportDes(){
-        return pAeroprtDes;
+        return aeroportDes;
     }
-    public void setAeroportDes(pAeroprtDes){
-        this.aeroprtDes = pAeroprtDes;
+    public void setAeroportDes(String pAeroprtDes){
+        this.aeroportDes = pAeroprtDes;
     }
     public String getPaisOri(){
-        return pPaisOri;
+        return paisOri;
     }
-    public void setPaisOri(pPaisOri){
+    public void setPaisOri(String pPaisOri){
         this.paisOri = pPaisOri;
     }
     public String getPaisDes(){
-        return pPaisDes;
+        return paisDes;
     }
-    public void setPaisDes(pPaisDes){
+    public void setPaisDes(String pPaisDes){
         this.paisDes = pPaisDes;
     }
     public String getContinentOri(){
-        return pContinentOri;
+        return continentOri;
     }
-    public void setContinentOri(pContinentOri){
+    public void setContinentOri(String pContinentOri){
         this.continentOri = pContinentOri;
     }
     public String getContinentDes(){
-        return pContinentDes;
+        return continentDes;
     }
-    public void setContinentDes(pContinentDes){
+    public void setContinentDes(String pContinentDes){
         this.continentDes = pContinentDes;
     }
     public double getDistancia(){
-        return pContinentDes;
+        return distancia;
     }
-    public void setDistancia(pDistancia){
+    public void setDistancia(double pDistancia){
         this.distancia = pDistancia;
     }
     
@@ -148,11 +148,11 @@ public class RutaIntercontinental {
 
         //Mostrem les dades de la ruta abans de la modificacio
         System.out.println("---Modificacio d'una ruta intercontinental---");
-        System.out.println("\nLes dades actuals de la ruta son les seguents:")
+        System.out.println("\nLes dades actuals de la ruta son les seguents:");
         mostrarRutaIntercontinental();
 
         //demanem les dades a l'usuari i les assignem a variables
-        System.out.println("\nNoves dades:")
+        System.out.println("\nNoves dades:");
         System.out.println("Introdueix el codi de la ruta: ");
         pCodi = in.nextLine();
         System.out.println("Introdueix l'aeroport d'origen: ");

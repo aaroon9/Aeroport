@@ -3,12 +3,14 @@
  * , edat, data d’alta en la companyia, hores que porta de vol i rang
  * v0.2
  */
-package aeroport;
+package components;
 
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
+import java.text.ParseException;
+
 
 /**
  *
@@ -140,7 +142,7 @@ public class TCP {
         
         pDataAlta = new SimpleDateFormat("hh:mm:ss").parse(date);
 
-        //instanciem un nou avio
+        //instanciem un nou TCP
         TCP TCPnou = new TCP(pPassaport, pNom, pEdat, pDataAlta, pHoresVol, pRang);
 
         return TCPnou;
@@ -160,7 +162,36 @@ public class TCP {
      Retorn: cap
      */
     public void modificarTCP() {
-
+        Scanner in = new Scanner(System.in);
+        String pPassaport, pNom;
+        int pEdat, hores, minuts;
+        LocalTime pHoresVol;
+        
+        //Mostrem les dades del TCP abans de la modificacio
+        System.out.println("---Modificacio d'un TCP---");
+        System.out.println("\nLes dades actuals del TCP son les seguents:");
+        mostrarTCP();
+        
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Creacio d'un nou TCP");
+        System.out.println("Introdueix el passaport del TCP: ");
+        pPassaport = in.nextLine();
+        System.out.println("Introdueix el nom del TCP: ");
+        pNom = in.nextLine();
+        System.out.println("Introdueix l'edat del TCP: ");
+        pEdat = in.nextInt();        
+        System.out.println("Introdueix les hores i minuts de vol del TCP: ");
+        System.out.println("Hores: ");
+        hores = in.nextInt();
+        System.out.println("Minuts: ");
+        minuts = in.nextInt();
+        pHoresVol = LocalTime.of(hores,minuts);
+        
+        //modifiquem el TCP
+        setPassaport(pPassaport);
+        setNom(pNom);
+        setEdat(pEdat);
+        setHoresVol(pHoresVol);
     }
 
     public void mostrarTCP() {
@@ -171,5 +202,4 @@ public class TCP {
         System.out.println("\nHores de vol: " + horesVol.getHour() + ":" + horesVol.getMinute());
         System.out.println("\nRang: " + rang);
     }
-
 }

@@ -3,7 +3,7 @@
  * (no pot haver-hi un avió amb dues classes amb el mateix nom) i capacitat.
  *
  */
-package aeroport;
+package components;
 import java.util.Scanner;
 
 /**

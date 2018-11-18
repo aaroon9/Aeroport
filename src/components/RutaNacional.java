@@ -3,7 +3,7 @@
  * destí, distància i país.
  * v1.0
  */
-package aeroport;
+package components;
 
 import java.util.Scanner;
 

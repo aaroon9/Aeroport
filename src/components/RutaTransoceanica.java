@@ -1,41 +1,47 @@
 /*
- * Una ruta internacional es defineix pel seu codi, aeroport d’origen, aeroport 
- * de destí, distància, país d’origen i país de destí
+ * Una ruta transoceànica es defineix pel seu codi, aeroport d’origen, aeroport 
+ * de destí, distància, país d’origen, país de destí, continent d’origen, continent 
+ * de destí i oceà que sobrevola.
  */
-package aeroport;
+package components;
 import java.util.Scanner;
-
 /**
  *
  * @author root
  */
-public class RutaInternacional {
-    
+public class RutaTransoceanica {
+
     private String codi;
     private String aeroportOri;
     private String aeroportDes;
     private String paisOri;
     private String paisDes;
+    private String continentOri;
+    private String continentDes;
+    private String ocea;
     private double distancia;
-    
+
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe.
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    public RutaInternacional(String pCodi, String pAeroportOrigen, String pAeroportDest, String pPaisOri, String pPaisDes, double pDistancia){
+    public RutaTransoceanica(String pCodi, String pAeroportOri, String pAeroportDes, String pPaisOri, String pPaisDes, String pContinentOri, String pContinentDes, String pOcea,  double pDistancia){
         codi = pCodi;
-        aeroportOri = pAeroportOrigen;
-        aeroportDes = pAeroportDest;
+        aeroportOri = pAeroportOri;
+        aeroportDes = pAeroportDes;
         paisOri = pPaisOri;
         paisDes = pPaisDes;
+        continentOri = pContinentOri;
+        continentDes = pContinentDes;
+        ocea = pOcea;
         distancia = pDistancia;
-    };
-
+    }
+    
     /*
     Mètodes accessors
-     */
+    */
     public String getCodi(){
         return codi;
     }
@@ -66,29 +72,49 @@ public class RutaInternacional {
     public void setPaisDes(String pPaisDes){
         this.paisDes = pPaisDes;
     }
+    public String getContinentOri(){
+        return continentOri;
+    }
+    public void setContinentOri( String pContinentOri){
+        this.continentOri = pContinentOri;
+    }
+    public String getContinentDes(){
+        return continentDes;
+    }
+    public void setContinetDes(String pContinentDes){
+        this.continentDes = pContinentDes;
+    }
+    public String getOcea(){
+        return ocea;
+    }
+    public void setOcea(String pOcea){
+        this.ocea = pOcea;
+    }
     public double getDistancia(){
         return distancia;
     }
     public void setDistancia(double pDistancia){
         this.distancia = pDistancia;
     }
-
-
-    /*
+    
+   /*
     Paràmetres: cap
     Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova ruta internacional.
+    - Demanar a l'usuari les dades per consola per crear una nova ruta transcoceanica.
     Les dades a demanar són les que necessita el constructor.
-    - Heu de tenir en compte que els aeroports països no tene per què estar formats per una única 
-    paraula, per exemple, El Prat o Regne Unit.
+    - Heu de tenir en compte que els aeroports i països no tene per què estar formats
+    per una única paraula, per exemple, El Prat i Regne Unit.
      */
-    public static RutaInternacional novaRutaInternacional() {
+    public static RutaTransoceanica novaRutaTransoceanica() {
         Scanner in = new Scanner (System.in);
         String pCodi;
         String pAeroportOrigen; 
         String pAeroportDest; 
         String pPaisOri;
         String pPaisDes;
+        String pContinentOri;
+        String pContinentDes;
+        String pOcea;
         double pDistancia;
         System.out.println("Introdueix un Codi per la nova ruta: ");
         pCodi = in.nextLine();
@@ -100,11 +126,18 @@ public class RutaInternacional {
         pPaisOri = in.nextLine();
         System.out.println("Introdueix un pais Desti: ");
         pPaisDes = in.nextLine();
+        System.out.println("Introdueix un continent d'origen: ");
+        pContinentOri = in.nextLine();
+        System.out.println("Introdueix un continent de desti: ");
+        pContinentDes = in.nextLine();
+        System.out.println("Introdueix l'ocea que es sobrevola: ");
+        pOcea = in.nextLine();
         System.out.println("Introdueix la distancia que es recorrerà: ");
         pDistancia = in.nextDouble();
         
-        RutaInternacional rutaInternacional = new RutaInternacional( pCodi, pAeroportOrigen, pAeroportDest, pPaisOri, pPaisDes, pDistancia);
+        RutaTransoceanica rutaTransoceanica = new RutaTransoceanica(pCodi,pAeroportOrigen,pAeroportDest,pPaisOri,pPaisDes,pContinentOri,pContinentDes, pOcea,pDistancia);
         return null;
+
     }
 
     /*
@@ -117,15 +150,15 @@ public class RutaInternacional {
     
      Retorn: cap
      */
-    public void modificarRutaInternacional() {
+    public void modificarRutaTransoceanica() {
         Scanner in = new Scanner (System.in);
-        String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes;
+        String pCodi, pAeroportOri, pAeroprtDes, pPaisOri, pPaisDes, pContinentOri, pContinentDes, pOcea;
         double pDistancia;
 
         //Mostrem les dades de la ruta abans de la modificacio
         System.out.println("---Modificacio d'una ruta intercontinental---");
         System.out.println("Les dades actuals de la ruta son les seguents:");
-        mostrarRutaInternacional();
+        mostrarRutaTransoceanica();
 
         //demanem les dades a l'usuari i les assignem a variables
         System.out.println("Noves dades:");
@@ -139,6 +172,12 @@ public class RutaInternacional {
         pPaisOri = in.nextLine();
         System.out.println("Introdueix el pais de desti: ");
         pPaisDes = in.nextLine();
+        System.out.println("Introdueix el continent d'origen: ");
+        pContinentOri = in.nextLine();
+        System.out.println("Introdueix el continent de desti: ");
+        pContinentDes = in.nextLine();
+        System.out.println("Introdueix el nou ocea que es sobrevola: ");
+        pOcea = in.nextLine();
         System.out.println("Introdueix la distancia total de la ruta: ");
         pDistancia = in.nextDouble();
 
@@ -148,16 +187,21 @@ public class RutaInternacional {
         setAeroportDes(pAeroprtDes);
         setPaisOri(pPaisOri);
         setPaisDes(pPaisDes);
+        setOcea(pOcea);
         setDistancia(pDistancia);
 
     }
 
-    public void mostrarRutaInternacional() {
-        System.out.println("\nLes dades de la ruta internacional amb codi " + codi + " són:");
+    public void mostrarRutaTransoceanica() {
+        System.out.println("\nLes dades de la ruta transoceànica amb codi " + codi + " són:");
         System.out.println("\nAeroport d'origen: " + aeroportOri);
         System.out.println("\nAeroport de destí: " + aeroportDes);
-         System.out.println("\nPaís d'origen: " + paisOri);
+        System.out.println("\nPaís d'origen: " + paisOri);
         System.out.println("\nPaís de destí: " + paisDes);
+        System.out.println("\nContinent d'origen: " + continentOri);
+        System.out.println("\nContinent de destí: " + continentDes);
+        System.out.println("\nOceà que sobrevola: " + ocea);
         System.out.println("\nDistància: " + distancia);
     }
 }
+

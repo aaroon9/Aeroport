@@ -5,7 +5,7 @@
  * v1.2
  */
 
-package aeroport;
+package components;
 import java.util.Scanner;
 
 /**

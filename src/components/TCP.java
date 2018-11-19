@@ -34,12 +34,12 @@ public class TCP {
      - DONE: Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - DONE: Inicialitzar l'atribut rang a null, ja que quan es crea un TCP, mai té rang.
      */
-    public TCP(String pPassaport, String pNom, int pEdat, Date pDataAlta, 
+    public TCP(String pPassaport, String pNom, int pEdat, 
             LocalTime pHoresVol, String pRang){
         passaport = pPassaport;
         nom = pNom;
         edat = pEdat;
-        dataAlta = pDataAlta;
+        SimpleDateFormat dataAlta= new SimpleDateFormat("hh:mm:ss");
         horesVol = pHoresVol;
         rang = null;
     }
@@ -131,22 +131,10 @@ public class TCP {
         minuts = in.nextInt();
         pHoresVol = LocalTime.of(hores,minuts);
         
-        
-        //Esta ta mal
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss");
-
-        String date = simpleDateFormat.format(new Date());
-        System.out.println(date);
-
-        SimpleDateFormat formatData= new SimpleDateFormat("hh:mm:ss a dd-MM-yyyy");
-        
-        pDataAlta = new SimpleDateFormat("hh:mm:ss").parse(date);
-
         //instanciem un nou TCP
-        TCP TCPnou = new TCP(pPassaport, pNom, pEdat, pDataAlta, pHoresVol, pRang);
+        TCP TCPnou = new TCP(pPassaport, pNom, pEdat, pHoresVol, pRang);
 
         return TCPnou;
-       
     }
 
     /*

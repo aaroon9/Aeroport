@@ -44,7 +44,7 @@ public class Vol {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      - Inicialitzar ruta i avio a null, ja que quan es crea un vol, encara no s'han
-     assignat ni la ruta ni el vol.
+     assignat ni la ruta ni l'avio.
      - Inicialitzarem l'atribut tipusRuta a 0, ja que com no s'ha assignat encara una ruta,
      no podem saber de quin tipus és.
      - Inicialitzar el vector tripulacioCabina com a buit i una longitud de 7.

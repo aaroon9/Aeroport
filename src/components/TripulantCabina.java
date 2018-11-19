@@ -91,7 +91,7 @@ public class TripulantCabina {
     }
 
     public void setRang(String pRang){
-        this.nom = pRang;
+        this.rang = pRang;
     }
     
     public int getBarres(){
@@ -189,6 +189,49 @@ public class TripulantCabina {
      Retorn: cap
      */
     public void modificarTripulantCabina() {
+         Scanner in = new Scanner (System.in);
+         String pPass, pNom, pRang;
+         int pEdat, hores, minuts, segons, barres = 0;
+         
+         LocalTime pHoresVol;
+         
+         //Mostrem les dades del Tripulant abans de la modificacio
+        System.out.println("---Modificacio d'una ruta intercontinental---");
+        System.out.println("Les dades actuals del Tripulant son les seguents:");
+        mostrarTripulantCabina();
+        
+        System.out.println("Noves Dades:");
+        System.out.println("Introdueix el nou passaport:");
+        pPass = in.nextLine();
+        System.out.println("Introdueix el nou nom: ");
+        pNom = in.nextLine();
+        System.out.println("Introdueix la nova edat:");
+        pEdat = in.nextInt();
+        System.out.println("Introdueix les hores de vol:");
+        hores = in.nextInt();
+        System.out.println("Introdueix els minuts de vol:");
+        minuts = in.nextInt();
+        
+        pHoresVol = LocalTime.of(hores, minuts);
+        segons = hores*3600;
+        segons += (minuts*60);
+        pRang = getRang();
+        
+        if(segons>=157788000 && pRang == "Enginyer de vol"){
+            setRang("Copilot");
+            barres = assignarBarres("Copilot");
+        }else if(segons>= 473364000 && pRang == "Copilot"){
+            setRang("Comandant");
+            barres = assignarBarres("Comandant");
+        }
+        else{
+            setRang(pRang);
+        }
+        setPassaport(pPass);
+        setNom(pNom);
+        setEdat(pEdat);
+        setHoresVol(pHoresVol);
+        setBarres(barres);
 
     }
 
@@ -212,7 +255,19 @@ public class TripulantCabina {
      Retorn: número de barres
      */
     public int assignarBarres(String pRang) {
-        return 1;
+        int barres = 0;
+        
+        if(pRang == "Copilot" && this.horesVol.getHour()<1500){
+            barres = 2;
+        }else if(pRang == "Copilot" && this.horesVol.getHour() >= 1500){
+            barres = 3;
+        }
+        else if(pRang == "Comandant"){
+            barres = 4;
+        }else if(pRang == "Enginyer de vol"){
+            barres = 1;
+        }
+        return barres;
 
     }
 

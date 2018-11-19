@@ -26,21 +26,21 @@ public class Companyia {
     private static int properCodi = 1; //El proper codi a assignar
     private String nom;
     private Avio[] avions;
-    private int posicioAvions; //Possició actual buida del vector avions
+    private int posicioAvions; //Posició actual buida del vector avions
     private RutaNacional[] rutesNacionals;
-    private int posicioRutesNacionals; //Possició actual buida del vector rutesNacionals
+    private int posicioRutesNacionals; //Posició actual buida del vector rutesNacionals
     private RutaInternacional[] rutesInternacionals;
-    private int posicioRutesInternacionals; //Possició actual buida del vector rutesInternacionals
+    private int posicioRutesInternacionals; //Posició actual buida del vector rutesInternacionals
     private RutaIntercontinental[] rutesIntercontinentals;
-    private int posicioRutesIntercontinentals; //Possició actual buida del vector rutesIntercontinentals
+    private int posicioRutesIntercontinentals; //Posició actual buida del vector rutesIntercontinentals
     private RutaTransoceanica[] rutesTransoceaniques;
-    private int posicioRutesTransoceaniques; //Possició actual buida del vector rutesTransoceaniques
+    private int posicioRutesTransoceaniques; //Posició actual buida del vector rutesTransoceaniques
     private TripulantCabina[] tripulantsCabina;
-    private int posicioTripulantsCabina; //Possició actual buida del vector tripulantsCabina
+    private int posicioTripulantsCabina; //Posició actual buida del vector tripulantsCabina
     private TCP[] tcps;
-    private int posicioTcps; //Possició actual buida del vector tcps
+    private int posicioTcps; //Posició actual buida del vector tcps
     private Vol[] vols;
-    private int posicioVols; //Possició actual buida del vector vols
+    private int posicioVols; //Posició actual buida del vector vols
 
     /*
      CONSTRUCTOR
@@ -77,6 +77,7 @@ public class Companyia {
         posicioRutesIntercontinentals = 0;
         posicioRutesTransoceaniques = 0;
         posicioTripulantsCabina = 0;
+        posicioAvions = 0;
         posicioTcps = 0;
         posicioVols = 0;
     }
@@ -89,6 +90,24 @@ public class Companyia {
     }
     public void setNom(String pNom){
         this.nom = pNom;
+    }
+    public void setAvions(Avio[] pAvions) {
+        avions = pAvions;
+    }
+    public void setRutesNacionals(RutaNacional[] pRutesNacionals) {
+        rutesNacionals = pRutesNacionals;
+    }
+    public void setRutesrutesInternacionals(RutaInternacional[] pRutesInternacionals) {
+        rutesInternacionals = pRutesInternacionals;
+    }
+    public void setRutesIntercontinentals(RutaIntercontinental[] pRutesIntercontinentals) {
+        rutesIntercontinentals = pRutesIntercontinentals;
+    }
+    public void setRutesTransoceaniques(RutaTransoceanica[] pRutesTransoceaniques) {
+        rutesTransoceaniques = pRutesTransoceaniques;
+    }
+    public void setTripulantsCabina(TripulantCabina[] pTripulantsCabina) {
+        tripulantsCabina = pTripulantsCabina;
     }
     public int getPosicioRutesNacionals(){
         return posicioRutesNacionals;
@@ -119,6 +138,12 @@ public class Companyia {
     }
     public void setPosicioTripulantsCabina(int pPosicioTripulantsCabina){
         this.posicioTripulantsCabina = pPosicioTripulantsCabina;
+    }
+    public int getPosicioAvions(){
+        return posicioAvions;
+    }
+    public void setPosicioAvions(int pPosicioAvions){
+        this.posicioAvions = pPosicioAvions;
     }
     public int getPosicioTcps(){
         return posicioTcps;
@@ -204,7 +229,7 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvio() {
-        Companyia.
+        this.avions[posicioAvions].nouAvio();
     }
 
     public int seleccionarAvio() {

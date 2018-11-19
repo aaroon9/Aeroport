@@ -13,11 +13,13 @@ import components.RutaTransoceanica;
 import components.TCP;
 import components.TripulantCabina;
 import java.text.ParseException;
+import java.util.Scanner;
 
 /**
  *
  * @author root
  */
+
 public class Companyia {
 
     private int codi;
@@ -59,12 +61,78 @@ public class Companyia {
        posicioTripulantsCabina, posicioTcps i posicioVols, s'han d'inicialitzar a 0, què serà la primera posició
        buida dels vectors inicilitzats.
      */
-    
+    public Companyia(String pNom){
+        nom = pNom;
+        codi = properCodi; properCodi++;
+        avions = new Avio[100];
+        rutesNacionals = new RutaNacional[100];
+        rutesInternacionals = new RutaInternacional[200];
+        rutesIntercontinentals = new RutaIntercontinental[100];
+        rutesTransoceaniques = new RutaTransoceanica[45];
+        tripulantsCabina = new TripulantCabina[600];
+        tcps = new TCP[1000];
+        vols = new Vol[700];
+        posicioRutesNacionals = 0;
+        posicioRutesInternacionals = 0;
+        posicioRutesIntercontinentals = 0;
+        posicioRutesTransoceaniques = 0;
+        posicioTripulantsCabina = 0;
+        posicioTcps = 0;
+        posicioVols = 0;
+    }
     
     /*
      Mètodes accessors    
      */
-
+    public String getNom(){
+        return nom;
+    }
+    public void setNom(String pNom){
+        this.nom = pNom;
+    }
+    public int getPosicioRutesNacionals(){
+        return posicioRutesNacionals;
+    }
+    public void setPosicioRutesNacionals(int pPosicioRutesNacionals){
+        this.posicioRutesNacionals = pPosicioRutesNacionals;
+    }
+    public int getPosicioRutesInternacionals(){
+        return posicioRutesInternacionals;
+    }
+    public void setPosicioRutesInternacionals(int pPosicioRutesInternacionals){
+        this.posicioRutesInternacionals = pPosicioRutesInternacionals;
+    }
+    public int getPosicioRutesIntercontinentals(){
+        return posicioRutesIntercontinentals;
+    }
+    public void setPosicioRutesIntercontinentals(int pPosicioRutesIntercontinentals){
+        this.posicioRutesIntercontinentals = pPosicioRutesIntercontinentals;
+    }
+    public int getPosicioRutesTransoceaniques(){
+        return posicioRutesTransoceaniques;
+    }
+    public void setPosicioRutesTransoceaniques(int pPosicioRutesTransoceaniques){
+        this.posicioRutesTransoceaniques = pPosicioRutesTransoceaniques;
+    }
+    public int getPosicioTripulantsCabina(){
+        return posicioTripulantsCabina;
+    }
+    public void setPosicioTripulantsCabina(int pPosicioTripulantsCabina){
+        this.posicioTripulantsCabina = pPosicioTripulantsCabina;
+    }
+    public int getPosicioTcps(){
+        return posicioTcps;
+    }
+    public void setPosicioTcps(int pPosicioTcps){
+        this.posicioTcps = pPosicioTcps;
+    }
+    public int getPosicioVols(){
+        return posicioVols;
+    }
+    public void setPosicioVols(int pPosicioVols){
+        this.posicioVols = pPosicioVols;
+    }
+    
     
     /*
      Paràmetres: cap
@@ -76,7 +144,18 @@ public class Companyia {
      Retorn: La nova companyia.
      */
     public static Companyia novaCompanyia() {
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Creacio d'una nova companyia");
+        System.out.println("Introdueix el nom de la companyia: ");
+        pNom = in.nextLine();
+        
+        //instanciem una nova companyia
+        Companyia novaCompanyia = new Companyia(pNom);
 
+        return novaCompanyia;
     }
 
     /*
@@ -91,7 +170,21 @@ public class Companyia {
      Retorn: cap
      */
     public void modificarCompanyia() {
-
+        Scanner in = new Scanner(System.in);
+        String pNom;
+        
+        //Mostrem les dades de la companyia abans de la modificacio
+        System.out.println("---Modificacio d'una companyia---");
+        System.out.println("\nLes dades actuals de la companyia son les seguents:");
+        mostrarCompanyia();
+        
+        //demanem les dades a l'usuari i les assignem a variables
+        System.out.println("Modificacio d'una companyia");
+        System.out.println("Introdueix el nom de la companyia: ");
+        pNom = in.nextLine();
+        
+        //instanciem una nova companyia
+        setNom(pNom);
     }
 
     public void mostrarCompanyia() {
@@ -111,7 +204,7 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvio() {
-
+        Companyia.
     }
 
     public int seleccionarAvio() {

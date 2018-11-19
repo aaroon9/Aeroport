@@ -40,7 +40,7 @@ public class Vol {
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys ruta, avio,
-     tripulacioCabina, posicioTripulacioCabina, tcp i posicioTCP.
+     tripulacioCabina, tipusRuta, posicioTripulacioCabina, tcp i posicioTCP.
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      - Inicialitzar ruta i avio a null, ja que quan es crea un vol, encara no s'han

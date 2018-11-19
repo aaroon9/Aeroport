@@ -194,7 +194,7 @@ public class Aplicacio {
                 case 0:
                     break;
                 case 1:
-                    companyies[posicioCompanyies] = Companyia.novaCompanyia();
+                    companyies[posicioCompanyies] = Avio.nouAvio();
                     posicioCompanyies++;
                     break;
                 case 2:

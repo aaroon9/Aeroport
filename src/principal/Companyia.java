@@ -91,20 +91,44 @@ public class Companyia {
     public void setNom(String pNom){
         this.nom = pNom;
     }
+    public Avio[] getAvions() {
+        return avions;
+    }
     public void setAvions(Avio[] pAvions) {
         avions = pAvions;
+    }
+    public int getProperCodi() {
+        return properCodi;
+    }
+    public void setProperCodi(int pProperCodi) {
+        properCodi = pProperCodi;
+    }
+    public RutaNacional[] getRutesNacionals() {
+        return rutesNacionals;
     }
     public void setRutesNacionals(RutaNacional[] pRutesNacionals) {
         rutesNacionals = pRutesNacionals;
     }
+    public RutaInternacional[] getRutesInternacionals() {
+        return rutesInternacionals;
+    }
     public void setRutesrutesInternacionals(RutaInternacional[] pRutesInternacionals) {
         rutesInternacionals = pRutesInternacionals;
+    }
+    public RutaIntercontinental[] getRutesIntercontinentals() {
+        return rutesIntercontinentals;
     }
     public void setRutesIntercontinentals(RutaIntercontinental[] pRutesIntercontinentals) {
         rutesIntercontinentals = pRutesIntercontinentals;
     }
+    public RutaTransoceanica[] getRutesTransoceaniques() {
+        return rutesTransoceaniques;
+    }
     public void setRutesTransoceaniques(RutaTransoceanica[] pRutesTransoceaniques) {
         rutesTransoceaniques = pRutesTransoceaniques;
+    }
+    public TripulantCabina[] getTripulantsCabina() {
+        return tripulantsCabina;
     }
     public void setTripulantsCabina(TripulantCabina[] pTripulantsCabina) {
         tripulantsCabina = pTripulantsCabina;
@@ -156,6 +180,18 @@ public class Companyia {
     }
     public void setPosicioVols(int pPosicioVols){
         this.posicioVols = pPosicioVols;
+    }
+    public TCP[] getTcps() {
+        return tcps;
+    }
+    public void setTcps(TCP[] pTcps) {
+        tcps = pTcps;
+    }
+    public Vol[] getVol() {
+        return vols;
+    }
+    public void setVols(Vol[] pVols) {
+        vols = pVols;
     }
     
     

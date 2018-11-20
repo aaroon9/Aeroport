@@ -38,7 +38,6 @@ public class Avio {
         posicioClasses = 0;
     }
 
-
     /*
     Mètodes accessors
      */

@@ -487,8 +487,17 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvioVol() {
-        this.vols[posicioVols].avio = this.avions[posicioAvions];
-        posicioVols++;
+        Vol pVol = vols[seleccionarVol()];
+        if(pVol != null){
+            Avio pAvio = avions[seleccionarAvio()];
+            if(pAvio != null){
+                pVol.setAvio(pAvio);
+            } else {
+                System.out.println("Aquest avio no existeix");
+            }
+        } else {
+            System.out.println("Aquest vol no existeix");
+        }
     }
 
     /*
@@ -506,7 +515,17 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTripulantCabinaVol() {
-
+        Vol pVol = vols[seleccionarVol()];
+        if (pVol != null) {
+            TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
+            if (tripCab != null) {
+                vol.afegirTripulantCabina(tripCab);
+            } else {
+                System.out.println("Aquest tripulant de cabina no existeix");
+            }
+        } else {
+            System.out.println("Aquest vol no existeix");
+        }
     }
     
     /*
@@ -522,7 +541,17 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTCPVol() {
-  
+        Vol pVol = vols[seleccionarVol()];
+        if (pVol != null) {
+            TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
+            if (tripCab != null) {
+                pVol.afegirTripulantCabina(tripCab);
+            } else {
+                System.out.println("Aquest tripulant de cabina no existeix");
+            }
+        } else {
+            System.out.println("Aquest vol no existeix");
+        }
     }
 
     /*
@@ -543,7 +572,26 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaVol(int tipus) {
-    
+         Vol pVol = vols[seleccionarVol()];
+        if (pVol != null) {
+            switch (tipus) {
+                case 1:
+                    pVol.setRuta(RutaNacional.novaRutaNacional());
+                    break;
+                case 2:
+                    pVol.setRuta(RutaInternacional.novaRutaInternacional());
+                    break;
+                case 3:
+                    pVol.setRuta(RutaIntercontinental.novaRutaIntercontinental());
+                    break;
+                case 4:
+                    pVol.setRuta(RutaIntercontinental.novaRutaIntercontinental());
+                    break;
+                default:
+                    System.out.println("Aquesta ruta no existeix");
+            }
+
+        }
     }
 
 }

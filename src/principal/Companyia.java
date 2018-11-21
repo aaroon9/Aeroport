@@ -21,6 +21,7 @@ import java.util.Scanner;
  */
 
 public class Companyia {
+
     private final static Scanner DADES = new Scanner(System.in);
     private int codi;
     private static int properCodi = 1; //El proper codi a assignar
@@ -523,10 +524,14 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvioVol() {
-        Vol pVol = vols[seleccionarVol()];
-        if(pVol != null){
-            Avio pAvio = avions[seleccionarAvio()];
-            if(pAvio != null){
+        int posV, posA;
+        posV = seleccionarVol();
+        
+        if(posV != -1){
+            Vol pVol = vols[posV];
+            posA = seleccionarAvio();
+            if(posA != -1){
+                Avio pAvio = avions[posA];
                 pVol.setAvio(pAvio);
             } else {
                 System.out.println("Aquest avio no existeix");
@@ -551,11 +556,16 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTripulantCabinaVol() {
-        Vol pVol = vols[seleccionarVol()];
-        if (pVol != null) {
-            TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
-            if (tripCab != null) {
-                pVol.afegirTripulantCabina(tripCab);
+        int posV, posTc;
+        posV = seleccionarVol();
+
+        if (posV != -1) {
+            Vol pVol = vols[posV];
+            posTc = seleccionarTripulantCabina();
+            
+            if (posTc != -1) {
+                TripulantCabina tripCab = tripulantsCabina[posTc];
+                vol.afegirTripulantCabina(tripCab);
             } else {
                 System.out.println("Aquest tripulant de cabina no existeix");
             }
@@ -577,10 +587,15 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTCPVol() {
-        Vol pVol = vols[seleccionarVol()];
-        if (pVol != null) {
-            TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
-            if (tripCab != null) {
+        int posV, posTcp;
+        posV = seleccionarVol();
+        
+        if (posV != -1) {
+            Vol pVol = vols[posV];
+            posTcp = seleccionarTCP();
+            
+            if (posTcp != -1) {
+                TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
                 pVol.afegirTripulantCabina(tripCab);
             } else {
                 System.out.println("Aquest tripulant de cabina no existeix");

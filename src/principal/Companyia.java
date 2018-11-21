@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 
 public class Companyia {
-
+    private final static Scanner DADES = new Scanner(System.in);
     private int codi;
     private static int properCodi = 1; //El proper codi a assignar
     private String nom;
@@ -555,7 +555,7 @@ public class Companyia {
         if (pVol != null) {
             TripulantCabina tripCab = tripulantsCabina[posicioTripulantsCabina];
             if (tripCab != null) {
-                vol.afegirTripulantCabina(tripCab);
+                pVol.afegirTripulantCabina(tripCab);
             } else {
                 System.out.println("Aquest tripulant de cabina no existeix");
             }

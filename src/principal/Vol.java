@@ -82,6 +82,9 @@ public class Vol {
     public Object getRuta(){
         return ruta;
     }
+    public void setRuta(Object pRuta){
+        ruta = pRuta;
+    }
     public int getTipusRuta(){
         return tipusRuta;
     }
@@ -90,6 +93,9 @@ public class Vol {
     }
     public Avio getAvio(){
         return avio;
+    }
+    public void setAvio(Avio pAvio){
+        avio = pAvio;
     }
     public TripulantCabina getTripulantCabina(){
         return tripulacioCabina[posicioTripulacioCabina];

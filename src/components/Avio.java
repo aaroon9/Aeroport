@@ -171,6 +171,7 @@ public class Avio {
         String nomClasse;
         int capacitatClasse, capacitatTotal = 0;
         boolean afegida = false;
+        Classe classeNova = Classe.novaClasse();
 
         //demanem les dades de la nova classe a l'usuari
         System.out.println("Afegir classe");
@@ -186,11 +187,11 @@ public class Avio {
         if(seleccionarClasse(nomClasse) == -1){
             //Calculem la nova capacitat teorica que tindra l'avio
             for(int i = 0; i < posicioClasses; i++){
-                capacitatTotal += Classe[i].capacitat;
+                capacitatTotal += classes[i].getCapacitat();
             }
             //si es compleixen ambdues condicions es crea la classe
             if(capacitatTotal <= capacitat){
-                novaClasse();
+                classes[posicioClasses] = classeNova;
                 posicioClasses++;
                 //Marquem que esta afegida
                 afegida = true;

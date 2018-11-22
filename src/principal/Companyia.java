@@ -92,6 +92,9 @@ public class Companyia {
     public void setNom(String pNom){
         this.nom = pNom;
     }
+    public int getCodi(){
+        return codi;
+    }
     public Avio[] getAvions() {
         return avions;
     }
@@ -458,7 +461,7 @@ public class Companyia {
      - actualitza la posició del vector de TCPs.
      Retorn: cap
      */
-    public void afegirTCP() {
+    public void afegirTCP() throws ParseException{
         this.tcps[posicioTcps] = TCP.nouTCP();
         posicioTcps++;
     }
@@ -565,7 +568,7 @@ public class Companyia {
             
             if (posTc != -1) {
                 TripulantCabina tripCab = tripulantsCabina[posTc];
-                vol.afegirTripulantCabina(tripCab);
+                pVol.afegirTripulantCabina(tripCab);
             } else {
                 System.out.println("Aquest tripulant de cabina no existeix");
             }

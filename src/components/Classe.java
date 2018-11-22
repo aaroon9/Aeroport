@@ -31,7 +31,7 @@ public class Classe {
     public String getNom(){
         return nomClasse;
     }
-    public short getcapacitat(){
+    public short getCapacitat(){
         return capAvio;
     }
     public void setNom(String pNom){

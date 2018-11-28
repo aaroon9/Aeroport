@@ -136,7 +136,7 @@ public class RutaTransoceanica {
         pDistancia = in.nextDouble();
         
         RutaTransoceanica rutaTransoceanica = new RutaTransoceanica(pCodi,pAeroportOrigen,pAeroportDest,pPaisOri,pPaisDes,pContinentOri,pContinentDes, pOcea,pDistancia);
-        return null;
+        return rutaTransoceanica;
 
     }
 

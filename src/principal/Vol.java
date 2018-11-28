@@ -320,8 +320,8 @@ public class Vol {
                 break;
         }
 
-        System.out.println("\nAvio: ");
-        avio.mostrarAvio();
+        //System.out.println("\nAvio: ");
+        //avio.mostrarAvio();
 
         System.out.println("\nData de sortida: " + new SimpleDateFormat("dd-MM-yyyy").format(dataSortida));
         System.out.println("\nData d'arribada: " + new SimpleDateFormat("dd-MM-yyyy").format(dataArribada));

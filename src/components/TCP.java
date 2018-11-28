@@ -125,9 +125,9 @@ public class TCP {
         System.out.println("Introdueix l'edat del TCP: ");
         pEdat = in.nextInt();        
         System.out.println("Introdueix les hores i minuts de vol del TCP: ");
-        System.out.println("Hores: ");
+        System.out.print("Hores: ");
         hores = in.nextInt();
-        System.out.println("Minuts: ");
+        System.out.print("Minuts: ");
         minuts = in.nextInt();
         pHoresVol = LocalTime.of(hores,minuts);
         

@@ -116,7 +116,7 @@ public class Companyia {
     public RutaInternacional[] getRutesInternacionals() {
         return rutesInternacionals;
     }
-    public void setRutesrutesInternacionals(RutaInternacional[] pRutesInternacionals) {
+    public void setRutesInternacionals(RutaInternacional[] pRutesInternacionals) {
         rutesInternacionals = pRutesInternacionals;
     }
     public RutaIntercontinental[] getRutesIntercontinentals() {

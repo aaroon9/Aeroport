@@ -35,7 +35,8 @@ public class Aplicacio {
             System.out.println("\n6. Gestió de rutes transoceàniques");
             System.out.println("\n7. Gestió de tripulants de cabina");
             System.out.println("\n8. Gestió de tripulants de cabina de passatgers");
-            System.out.println("\n8. Gestió de vols");
+            System.out.println("\n9. Gestió de vols");
+            System.out.println("\n\nOpció: ");
 
             opcio = DADES.nextInt();
 
@@ -263,7 +264,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioRutesNacionals(); i++) {
-                        companyiaActual.getRutesNacionals()[pos].mostrarRutaNacional();
+                        companyiaActual.getRutesNacionals()[i].mostrarRutaNacional();
                     }
                     break;                    
                 default:
@@ -320,7 +321,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioRutesInternacionals(); i++) {
-                        companyiaActual.getRutesInternacionals()[pos].mostrarRutaInternacional();
+                        companyiaActual.getRutesInternacionals()[i].mostrarRutaInternacional();
                     }
                     break;                    
                 default:
@@ -328,6 +329,8 @@ public class Aplicacio {
                     break;
             }
         } while (opcio != 0);
+                
+                        
     }
 
     /*
@@ -377,7 +380,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioRutesIntercontinentals(); i++) {
-                        companyiaActual.getRutesIntercontinentals()[pos].mostrarRutaIntercontinental();
+                        companyiaActual.getRutesIntercontinentals()[i].mostrarRutaIntercontinental();
                     }
                     break;                    
                 default:
@@ -434,7 +437,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioRutesTransoceaniques(); i++) {
-                        companyiaActual.getRutesTransoceaniques()[pos].mostrarRutaTransoceanica();
+                        companyiaActual.getRutesTransoceaniques()[i].mostrarRutaTransoceanica();
                     }
                     break;                    
                 default:
@@ -491,7 +494,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioTripulantsCabina(); i++) {
-                        companyiaActual.getTripulantsCabina()[pos].mostrarTripulantCabina();
+                        companyiaActual.getTripulantsCabina()[i].mostrarTripulantCabina();
                     }
                     break;                    
                 default:
@@ -548,7 +551,7 @@ public class Aplicacio {
                     break;
                 case 3:
                     for (int i = 0; i < companyiaActual.getPosicioTcps(); i++) {
-                        companyiaActual.getTcps()[pos].mostrarTCP();
+                        companyiaActual.getTcps()[i].mostrarTCP();
                     }
                     break;                    
                 default:

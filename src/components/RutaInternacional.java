@@ -104,7 +104,7 @@ public class RutaInternacional {
         pDistancia = in.nextDouble();
         
         RutaInternacional rutaInternacional = new RutaInternacional( pCodi, pAeroportOrigen, pAeroportDest, pPaisOri, pPaisDes, pDistancia);
-        return null;
+        return rutaInternacional;
     }
 
     /*
@@ -123,7 +123,7 @@ public class RutaInternacional {
         double pDistancia;
 
         //Mostrem les dades de la ruta abans de la modificacio
-        System.out.println("---Modificacio d'una ruta intercontinental---");
+        System.out.println("---Modificacio d'una ruta internacional---");
         System.out.println("Les dades actuals de la ruta son les seguents:");
         mostrarRutaInternacional();
 
@@ -156,7 +156,7 @@ public class RutaInternacional {
         System.out.println("\nLes dades de la ruta internacional amb codi " + codi + " són:");
         System.out.println("\nAeroport d'origen: " + aeroportOri);
         System.out.println("\nAeroport de destí: " + aeroportDes);
-         System.out.println("\nPaís d'origen: " + paisOri);
+        System.out.println("\nPaís d'origen: " + paisOri);
         System.out.println("\nPaís de destí: " + paisDes);
         System.out.println("\nDistància: " + distancia);
     }

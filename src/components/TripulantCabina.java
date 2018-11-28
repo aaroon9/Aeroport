@@ -140,27 +140,28 @@ public class TripulantCabina {
         hores = in.nextInt();
         System.out.println("Introdueix els minuts del vol: ");
         minuts = in.nextInt();
+        in.nextLine();
         pHoresVol = LocalTime.of(hores, minuts);
         do{
             System.out.println("Intrdoueix un rang per al tripulant (C)-> Comandant, (CP)-> Copilot, (EV)-> enginyer de vol. ");
             pRang = in.nextLine();
-            if(pRang != "CP" || pRang != "C" || pRang != "EV"){
-                System.out.println("El rang introduït no és correcte");
-            }else if(pRang == "C"){
+            if(pRang.equals("C")){
                 pRang = "Comandant";
                 rang = true;
-            }else if(pRang == "CP"){
+            }else if(pRang.equals("CP")){
                 pRang = "Copilot";
                 rang = true;
-            }else if (pRang == "EV"){
+            }else if (pRang.equals("EV")){
                 pRang = "Enginyer de vol";
                 rang = true;
+            } else {
+                System.out.println("El rang introduït no és correcte");
             }
         }
-        while( rang != true);
+        while(rang != true);
         
         TripulantCabina nouTripulant = new TripulantCabina( pPass, pNom,pEdat,pHoresVol,pRang);
-        return null;
+        return nouTripulant;
         
     }
 
